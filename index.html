@@ -143,19 +143,16 @@
             height: 220px;
             border-radius: 12px;
             overflow: hidden;
-            background-color: #0f172a;
+            background-color: #000;
             margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 1px solid rgba(255,255,255,0.05);
+            position: relative;
         }
 
-        .exercise-media img {
+        .exercise-media iframe {
             width: 100%;
             height: 100%;
-            object-fit: contain;
-            background-color: #fff;
+            border: none;
+            pointer-events: none; /* Impede clique para não pausar o GIF */
         }
 
         .exercise-instructions {
@@ -206,7 +203,7 @@
                     <span class="badge">12 Reps / lado</span>
                 </div>
                 <div class="exercise-media">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/23/Single_Leg_Glute_Bridge.gif" alt="Elevação Pélvica Unilateral" loading="lazy">
+                    <iframe src="https://giphy.com/embed/3o7TKR15L511fVq0BG"></iframe>
                 </div>
                 <div class="exercise-instructions">
                     Ativação inicial no solo sem carga. Focar em contrair bem o glúteo no topo para despertar a musculatura.
@@ -220,7 +217,7 @@
                     <span class="badge">12 / 10 / 8 / 8 Reps</span>
                 </div>
                 <div class="exercise-media">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b3/Barbell_Hip_Thrust.gif" alt="Elevação Pélvica" loading="lazy">
+                    <iframe src="https://giphy.com/embed/l0HlCqV35yPPfIee4"></iframe>
                 </div>
                 <div class="exercise-instructions">
                     Aumente a carga a cada série (pirâmide). Segure 3 segundos no topo em todas as repetições esmagando o bumbum.
@@ -234,10 +231,10 @@
                     <span class="badge">12 a 15 Reps</span>
                 </div>
                 <div class="exercise-media">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/e/eb/Dumbbell_Sumo_Squat.gif" alt="Agachamento Sumo" loading="lazy">
+                    <iframe src="https://giphy.com/embed/3o6Zt6ML6BklcajjsA"></iframe>
                 </div>
                 <div class="exercise-instructions">
-                    Pés bem abertos (45°). Segure o halter com os braços esticados para baixo. Peso abaixo do centro de gravidade (zero compressão axial).
+                    Pés bem abertos (45°). Segure o halter com os braços esticados para baixo. Peso abaixo do centro de gravidade.
                 </div>
             </div>
 
@@ -248,7 +245,7 @@
                     <span class="badge">12 Reps Lentas</span>
                 </div>
                 <div class="exercise-media">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/22/Sled_45_Degree_Leg_Press.gif" alt="Leg Press 45" loading="lazy">
+                    <iframe src="https://giphy.com/embed/3o7TKT0yZl35iJqg2A"></iframe>
                 </div>
                 <div class="exercise-instructions">
                     Pés posicionados bem no topo da plataforma e levemente afastados.
@@ -263,7 +260,7 @@
                     <span class="badge">12 Reps + Drop-set</span>
                 </div>
                 <div class="exercise-media">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b3/Leg_Extension.gif" alt="Cadeira Extensora" loading="lazy">
+                    <iframe src="https://giphy.com/embed/xT1R9YbV274L77kMms"></iframe>
                 </div>
                 <div class="exercise-instructions">
                     Na última série, faça o Drop-set: reduza o peso em 40% e vá direto até a falha.
@@ -284,7 +281,7 @@
                     <span class="badge">12 / 10 / 8 / 8 Reps</span>
                 </div>
                 <div class="exercise-media">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/8/86/Cable_Lat_Pulldown.gif" alt="Puxada Alta" loading="lazy">
+                    <iframe src="https://giphy.com/embed/3o7TKR5z9uC7x2bMpq"></iframe>
                 </div>
                 <div class="exercise-instructions">
                     Pegada aberta. Puxar até a altura do peito, fechando bem as escápulas atrás.
@@ -298,7 +295,7 @@
                     <span class="badge">12 Reps / lado</span>
                 </div>
                 <div class="exercise-media">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c5/Lever_One_Arm_Row.gif" alt="Remada Articulada" loading="lazy">
+                    <iframe src="https://giphy.com/embed/3o6ZT2vInIuXU3c5O0"></iframe>
                 </div>
                 <div class="exercise-instructions">
                     Apoie o peito no banco da máquina. Excelente para alinhar assimetrias da escoliose com apoio total.
@@ -312,7 +309,7 @@
                     <span class="badge">12 Reps</span>
                 </div>
                 <div class="exercise-media">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/1/12/Seated_Cable_Row.gif" alt="Remada Baixa" loading="lazy">
+                    <iframe src="https://giphy.com/embed/3o7TKqm21A8gIqgXm0"></iframe>
                 </div>
                 <div class="exercise-instructions">
                     Coluna ereta, puxando o triângulo em direção ao umbigo.
@@ -326,7 +323,7 @@
                     <span class="badge">12 Reps</span>
                 </div>
                 <div class="exercise-media">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Cable_Biceps_Curl.gif" alt="Rosca Polia" loading="lazy">
+                    <iframe src="https://giphy.com/embed/xT1R9S04pQY3SgU0g0"></iframe>
                 </div>
                 <div class="exercise-instructions">
                     Cotovelos travados ao lado do corpo.
@@ -340,7 +337,7 @@
                     <span class="badge">15 a 20 Reps</span>
                 </div>
                 <div class="exercise-media">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/30/Lying_Leg_Raise.gif" alt="Abdominal Infra" loading="lazy">
+                    <iframe src="https://giphy.com/embed/3o6Zt8AByU6W2kY8q4"></iframe>
                 </div>
                 <div class="exercise-instructions">
                     Concentrar na força do abdômen mantendo a lombar colada no chão.
@@ -354,7 +351,7 @@
                     <span class="badge">30 a 45 seg</span>
                 </div>
                 <div class="exercise-media">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/Plank_exercise.gif" alt="Prancha" loading="lazy">
+                    <iframe src="https://giphy.com/embed/3o7TKp0X7hD3N8C7sI"></iframe>
                 </div>
                 <div class="exercise-instructions">
                     Manter glúteos e abdômen bem contraídos durante a sustentação.
@@ -375,7 +372,7 @@
                     <span class="badge">15 a 20 Reps</span>
                 </div>
                 <div class="exercise-media">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/23/Seated_Hip_Abduction.gif" alt="Cadeira Abdutora" loading="lazy">
+                    <iframe src="https://giphy.com/embed/l0HlS7A6T0JzKk1S8"></iframe>
                 </div>
                 <div class="exercise-instructions">
                     Descole as costas do encosto e incline o tronco para a frente. Foco total nas fibras do glúteo superior.
@@ -389,7 +386,7 @@
                     <span class="badge">10 a 12 Reps / lado</span>
                 </div>
                 <div class="exercise-media">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d6/Dumbbell_Lunge.gif" alt="Afundo Step" loading="lazy">
+                    <iframe src="https://giphy.com/embed/3o7TKR15L511fVq0BG"></iframe>
                 </div>
                 <div class="exercise-instructions">
                     Pé da frente no step. Halteres leves nas mãos. Empurrar o chão pelo calcanhar da frente para subir.
@@ -403,7 +400,7 @@
                     <span class="badge">12 a 15 Reps / lado</span>
                 </div>
                 <div class="exercise-media">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b3/Cable_Hip_Abduction.gif" alt="Abdução Polia" loading="lazy">
+                    <iframe src="https://giphy.com/embed/3o6Zt6ML6BklcajjsA"></iframe>
                 </div>
                 <div class="exercise-instructions">
                     Chute lateral controlado mantendo o tronco estável.
@@ -417,7 +414,7 @@
                     <span class="badge">12 Reps</span>
                 </div>
                 <div class="exercise-media">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c0/Lying_Leg_Curl.gif" alt="Mesa Flexora" loading="lazy">
+                    <iframe src="https://giphy.com/embed/xT1R9YbV274L77kMms"></iframe>
                 </div>
                 <div class="exercise-instructions">
                     Descida bem lenta e controlada (3 segundos).
@@ -431,7 +428,7 @@
                     <span class="badge">20 Reps</span>
                 </div>
                 <div class="exercise-media">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/03/Seated_Calf_Raise.gif" alt="Panturrilha" loading="lazy">
+                    <iframe src="https://giphy.com/embed/3o7TKT0yZl35iJqg2A"></iframe>
                 </div>
                 <div class="exercise-instructions">
                     Amplitude máxima de movimento subindo e descendo bem os calcanhares.
@@ -452,7 +449,7 @@
                     <span class="badge">12 Reps</span>
                 </div>
                 <div class="exercise-media">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Dumbbell_Bench_Press.gif" alt="Supino Halteres" loading="lazy">
+                    <iframe src="https://giphy.com/embed/xT1R9Y3M21cM82uYw0"></iframe>
                 </div>
                 <div class="exercise-instructions">
                     Execução controlada garantindo simetria dos dois lados.
@@ -466,7 +463,7 @@
                     <span class="badge">12 Reps</span>
                 </div>
                 <div class="exercise-media">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/36/Incline_Dumbbell_Fly.gif" alt="Crucifixo Inclinado" loading="lazy">
+                    <iframe src="https://giphy.com/embed/3o7TKq1WlO1e4XwDle"></iframe>
                 </div>
                 <div class="exercise-instructions">
                     Abrir bem o peitoral mantendo cotovelos levemente flexionados.
@@ -480,7 +477,7 @@
                     <span class="badge">15 / 12 / 10 / 8 Reps</span>
                 </div>
                 <div class="exercise-media">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a8/Seated_Dumbbell_Lateral_Raise.gif" alt="Elevação Lateral" loading="lazy">
+                    <iframe src="https://giphy.com/embed/3o6Zt481isNVuQI1l6"></iframe>
                 </div>
                 <div class="exercise-instructions">
                     Obrigatório fazer sentada para não balançar o tronco nem forçar a lombar.
@@ -494,7 +491,7 @@
                     <span class="badge">12 Reps</span>
                 </div>
                 <div class="exercise-media">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a3/Cable_Front_Raise.gif" alt="Elevação Frontal" loading="lazy">
+                    <iframe src="https://giphy.com/embed/xT1R9Y14A7iZq80Kze"></iframe>
                 </div>
                 <div class="exercise-instructions">
                     Elevar a corda até a altura dos olhos com controle.
@@ -508,7 +505,7 @@
                     <span class="badge">12 Reps + Drop-set</span>
                 </div>
                 <div class="exercise-media">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/d/da/Cable_Triceps_Pushdown.gif" alt="Triceps Corda" loading="lazy">
+                    <iframe src="https://giphy.com/embed/3o7TKp0X7hD3N8C7sI"></iframe>
                 </div>
                 <div class="exercise-instructions">
                     Abrir a corda embaixo na máxima contração. Drop-set na última série.
@@ -529,7 +526,7 @@
                     <span class="badge">12 a 15 Reps / lado</span>
                 </div>
                 <div class="exercise-media">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Cable_Glute_Kickback.gif" alt="Gluteo Polia" loading="lazy">
+                    <iframe src="https://giphy.com/embed/l0HlCqV35yPPfIee4"></iframe>
                 </div>
                 <div class="exercise-instructions">
                     Tronco levemente inclinado. Chutar para trás e levemente para fora focando a força no bumbum.
@@ -543,7 +540,7 @@
                     <span class="badge">15 Reps + Rest-Pause</span>
                 </div>
                 <div class="exercise-media">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/23/Seated_Hip_Abduction.gif" alt="Abdutora Padrão" loading="lazy">
+                    <iframe src="https://giphy.com/embed/l0HlS7A6T0JzKk1S8"></iframe>
                 </div>
                 <div class="exercise-instructions">
                     Postura padrão encostada no banco. Na última série, descanse 15s após falhar e faça mais o máximo.
@@ -557,7 +554,7 @@
                     <span class="badge">12 Reps</span>
                 </div>
                 <div class="exercise-media">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Dumbbell_Stiff_Leg_Deadlift.gif" alt="Stiff" loading="lazy">
+                    <iframe src="https://giphy.com/embed/3o6Zt6ML6BklcajjsA"></iframe>
                 </div>
                 <div class="exercise-instructions">
                     Mantenha os joelhos levemente destravados e desça projetando o quadril para trás.
@@ -572,7 +569,7 @@
                     <span class="badge">15 Reps</span>
                 </div>
                 <div class="exercise-media">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e2/Seated_Hip_Adduction.gif" alt="Cadeira Adutora" loading="lazy">
+                    <iframe src="https://giphy.com/embed/l0HlS7A6T0JzKk1S8"></iframe>
                 </div>
                 <div class="exercise-instructions">
                     Aproximar as pernas com força no interno da coxa.
@@ -586,7 +583,7 @@
                     <span class="badge">Inclinação 6% a 10%</span>
                 </div>
                 <div class="exercise-media">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/62/Treadmill_Walking.gif" alt="Esteira Inclinada" loading="lazy">
+                    <iframe src="https://giphy.com/embed/3o7TKT0yZl35iJqg2A"></iframe>
                 </div>
                 <div class="exercise-instructions">
                     Caminhada acelerada (sem correr) e sem segurar nas barras laterais. Excelente para ativar o glúteo e queimar calorias sem impactar a coluna.
@@ -598,21 +595,17 @@
 
     <script>
         function openTab(tabId, event) {
-            // Esconde todos os treinos
             const sections = document.querySelectorAll('.workout-section');
             sections.forEach(section => section.classList.remove('active'));
 
-            // Remove o estado ativo de todos os botões
             const buttons = document.querySelectorAll('.tab-btn');
             buttons.forEach(button => button.classList.remove('active'));
 
-            // Mostra o treino selecionado e ativa o botão correspondente
             document.getElementById(tabId).classList.add('active');
             if (event && event.currentTarget) {
                 event.currentTarget.classList.add('active');
             }
 
-            // Rola suavemente para o topo do treino
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     </script>
