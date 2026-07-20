@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treino VIP - Foco & Evolução</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-pink: #ec4899;
+            --accent-purple: #8b5cf6;
+            --text-color: #f8fafc;
+            --text-muted: #94a3b8;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            padding-bottom: 40px;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--accent-pink), var(--accent-purple));
+            padding: 24px 16px;
+            text-align: center;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            box-shadow: 0 4px 12px rgba(236, 72, 153, 0.3);
+        }
+
+        header h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        header p {
+            font-size: 0.85rem;
+            opacity: 0.9;
+            margin-top: 4px;
+        }
+
+        /* Navegação dos Treinos */
+        .nav-container {
+            display: flex;
+            overflow-x: auto;
+            gap: 10px;
+            padding: 16px;
+            scrollbar-width: none; /* Firefox */
+        }
+
+        .nav-container::-webkit-scrollbar {
+            display: none; /* Chrome/Safari */
+        }
+
+        .tab-btn {
+            background-color: var(--card-bg);
+            color: var(--text-muted);
+            border: 2px solid transparent;
+            padding: 12px 20px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: all 0.3s ease;
+        }
+
+        .tab-btn.active {
+            color: #fff;
+            border-color: var(--accent-pink);
+            background: linear-gradient(135deg, rgba(236, 72, 153, 0.2), rgba(139, 92, 246, 0.2));
+        }
+
+        /* Container de Conteúdo */
+        .content {
+            padding: 0 16px;
+        }
+
+        .workout-section {
+            display: none;
+        }
+
+        .workout-section.active {
+            display: block;
+        }
+
+        .workout-header {
+            margin: 12px 0 20px;
+        }
+
+        .workout-header h2 {
+            font-size: 1.25rem;
+            color: var(--accent-pink);
+        }
+
+        .workout-header p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 2px;
+        }
+
+        /* Card do Exercício */
+        .exercise-card {
+            background-color: var(--card-bg);
+            border-radius: 16px;
+            padding: 16px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+        }
+
+        .exercise-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #fff;
+        }
+
+        .exercise-badges {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+
+        .badge {
+            background-color: rgba(236, 72, 153, 0.15);
+            color: var(--accent-pink);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .exercise-media {
+            width: 100%;
+            height: 200px;
+            border-radius: 12px;
+            overflow: hidden;
+            background-color: #000;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .exercise-media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .exercise-instructions {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.4;
+            border-left: 3px solid var(--accent-purple);
+            padding-left: 10px;
+        }
+
+        .note {
+            background-color: rgba(234, 179, 8, 0.1);
+            color: #fde047;
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Treino Personalizado</h1>
+        <p>Foco em Glúteos & Proteção da Coluna</p>
+    </header>
+
+    <div class="nav-container">
+        <button class="tab-btn active" onclick="openTab('treino-a')">Treino A</button>
+        <button class="tab-btn" onclick="openTab('treino-b')">Treino B</button>
+        <button class="tab-btn" onclick="openTab('treino-c')">Treino C</button>
+        <button class="tab-btn" onclick="openTab('treino-d')">Treino D</button>
+        <button class="tab-btn" onclick="openTab('treino-e')">Treino E</button>
+    </div>
+
+    <div class="content">
+
+        <div id="treino-a" class="workout-section active">
+            <div class="workout-header">
+                <h2>TREINO A: Glúteo Máximo & Quadríceps</h2>
+                <p>Foco em extensão e vetor horizontal (sem carga na coluna)</p>
+            </div>
+
+            <div class="exercise-card">
+                <div class="exercise-title">1. Elevação Pélvica Unilateral</div>
+                <div class="exercise-badges">
+                    <span class="badge">3 Séries</span>
+                    <span class="badge">12 Reps / lado</span>
+                </div>
+                <div class="exercise-media">
+                    <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbnE2eTRsdW8xZXZsc2hucWwzdGF5enFiYWs4bWx6bTZkMnVvZ3ptZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o7TKR15L511fVq0BG/giphy.gif" alt="Elevação Pélvica">
+                </div>
+                <div class="exercise-instructions">
+                    Ativação inicial no solo sem carga. Focar em contrair bem o glúteo no topo para despertar a musculatura.
+                </div>
+            </div>
+
+            <div class="exercise-card">
+                <div class="exercise-title">2. Elevação Pélvica na Máquina / Barra</div>
+                <div class="exercise-badges">
+                    <span class="badge">4 Séries</span>
+                    <span class="badge">12 / 10 / 8 / 8 Reps</span>
+                </div>
+                <div class="exercise-media">
+                    <img src="https://v2.exerciseregister.com/assets/animations/0101.gif" alt="Elevação Pélvica Carga">
+                </div>
+                <div class="exercise-instructions">
+                    Aumente a carga a cada série (pirâmide). Segure 3 segundos no topo em todas as repetições esmagando o bumbum.
+                </div>
+            </div>
+
+            <div class="exercise-card">
+                <div class="exercise-title">3. Agachamento Sumô com Halter</div>
+                <div class="exercise-badges">
+                    <span class="badge">3 Séries</span>
+                    <span class="badge">12 a 15 Reps</span>
+                </div>
+                <div class="exercise-media">
+                    <img src="https://v2.exerciseregister.com/assets/animations/0488.gif" alt="Agachamento Sumo">
+                </div>
+                <div class="exercise-instructions">
+                    Pés bem abertos (45°). Segure o halter com os braços esticados para baixo. Peso abaixo do centro de gravidade (zero compressão axial).
+                </div>
+            </div>
+
+            <div class="exercise-card">
+                <div class="exercise-title">4. Leg Press 45° (Pés Altos)</div>
+                <div class="exercise-badges">
+                    <span class="badge">4 Séries</span>
+                    <span class="badge">12 Reps Lentas</span>
+                </div>
+                <div class="exercise-media">
+                    <img src="https://v2.exerciseregister.com/assets/animations/0582.gif" alt="Leg Press 45">
+                </div>
+                <div class="exercise-instructions">
+                    Pés posicionados bem no topo da plataforma e levemente afastados.
+                </div>
+                <div class="note">⚠️ Manter o quadril e a coluna 100% apoiados no banco.</div>
+            </div>
+
+            <div class="exercise-card">
+                <div class="exercise-title">5. Cadeira Extensora</div>
+                <div class="exercise-badges">
+                    <span class="badge">3 Séries</span>
+                    <span class="badge">12 Reps + Drop-set</span>
+                </div>
+                <div class="exercise-media">
+                    <img src="https://v2.exerciseregister.com/assets/animations/0585.gif" alt="Cadeira Extensora">
+                </div>
+                <div class="exercise-instructions">
+                    Na última série, faça o Drop-set: reduza o peso em 40% e vá direto até a falha.
+                </div>
+            </div>
+        </div>
+
+        <div id="treino-b" class="workout-section">
+            <div class="workout-header">
+                <h2>TREINO B: Costas, Bíceps & Core</h2>
+                <p>Fortalecimento de sustentação da coluna</p>
+            </div>
+
+            <div class="exercise-card">
+                <div class="exercise-title">1. Puxada Alta na Polia</div>
+                <div class="exercise-badges">
+                    <span class="badge">4 Séries</span>
+                    <span class="badge">12 / 10 / 8 / 8 Reps</span>
+                </div>
+                <div class="exercise-media">
+                    <img src="https://v2.exerciseregister.com/assets/animations/0150.gif" alt="Puxada Alta">
+                </div>
+                <div class="exercise-instructions">
+                    Pegada aberta. Puxar até a altura do peito, fechando bem as escápulas atrás.
+                </div>
+            </div>
+
+            <div class="exercise-card">
+                <div class="exercise-title">2. Remada Unilateral no Equipamento</div>
+                <div class="exercise-badges">
+                    <span class="badge">3 Séries</span>
+                    <span class="badge">12 Reps / lado</span>
+                </div>
+                <div class="exercise-media">
+                    <img src="https://v2.exerciseregister.com/assets/animations/0584.gif" alt="Remada Articulada">
+                </div>
+                <div class="exercise-instructions">
+                    Apoie o peito no banco da máquina. Excelente para alinhar assimetrias da escoliose com apoio total.
+                </div>
+            </div>
+
+            <div class="exercise-card">
+                <div class="exercise-title">3. Remada Baixa no Triângulo</div>
+                <div class="exercise-badges">
+                    <span class="badge">4 Séries</span>
+                    <span class="badge">12 Reps</span>
+                </div>
+                <div class="exercise-media">
+                    <img src="https://v2.exerciseregister.com/assets/animations/0240.gif" alt="Remada Baixa">
+                </div>
+                <div class="exercise-instructions">
+                    Coluna ereta, puxando o triângulo em direção ao umbigo.
+                </div>
+            </div>
+
+            <div class="exercise-card">
+                <div class="exercise-title">4. Rosca Direta na Polia Baixa</div>
+                <div class="exercise-badges">
+                    <span class="badge">3 Séries</span>
+                    <span class="badge">12 Reps</span>
+                </div>
+                <div class="exercise-media">
+                    <img src="https://v2.exerciseregister.com/assets/animations/0241.gif" alt="Rosca Polia">
+                </div>
+                <div class="exercise-instructions">
+                    Cotovelos travados ao lado do corpo.
+                </div>
+            </div>
+
+            <div class="exercise-card">
+                <div class="exercise-title">5. Abdominal Infra no Colchonete</div>
+                <div class="exercise-badges">
+                    <span class="badge">3 Séries</span>
+                    <span class="badge">15 a 20 Reps</span>
+                </div>
+                <div class="exercise-media">
+                    <img src="https://v2.exerciseregister.com/assets/animations/0508.gif" alt="Abdominal Infra">
+                </div>
+                <div class="exercise-instructions">
+                    Concentrar na força do abdômen mantendo a lombar colada no chão.
+                </div>
+            </div>
+
+            <div class="exercise-card">
+                <div class="exercise-title">6. Prancha Frontal Isométrica</div>
+                <div class="exercise-badges">
+                    <span class="badge">3 Séries</span>
+                    <span class="badge">30 a 45 seg</span>
+                </div>
+                <div class="exercise-media">
+                    <img src="https://v2.exerciseregister.com/assets/animations/0468.gif" alt="Prancha">
+                </div>
+                <div class="exercise-instructions">
+                    Manter glúteos e abdômen bem contraídos durante a sustentação.
+                </div>
+            </div>
+        </div>
+
+        <div id="treino-c" class="workout-section">
+            <div class="workout-header">
+                <h2>TREINO C: Glúteo Médio, Mínimo & Abdução</h2>
+                <p>Estabilização da pelve para tirar a dor da lombar</p>
+            </div>
+
+            <div class="exercise-card">
+                <div class="exercise-title">1. Cadeira Abdutora (Tronco Inclinado)</div>
+                <div class="exercise-badges">
+                    <span class="badge">4 Séries</span>
+                    <span class="badge">15 a 20 Reps</span>
+                </div>
+                <div class="exercise-media">
+                    <img src="https://v2.exerciseregister.com/assets/animations/0586.gif" alt="Cadeira Abdutora">
+                </div>
+                <div class="exercise-instructions">
+                    Descole as costas do encosto e incline o tronco para a frente. Foco total nas fibras do glúteo superior.
+                </div>
+            </div>
+
+            <div class="exercise-card">
+                <div class="exercise-title">2. Afundo no Step com Halteres</div>
+                <div class="exercise-badges">
+                    <span class="badge">3 Séries</span>
+                    <span class="badge">10 a 12 Reps / lado</span>
+                </div>
+                <div class="exercise-media">
+                    <img src="https://v2.exerciseregister.com/assets/animations/0489.gif" alt="Afundo Step">
+                </div>
+                <div class="exercise-instructions">
+                    Pé da frente no step. Halteres leves nas mãos. Empurrar o chão pelo calcanhar da frente para subir.
+                </div>
+            </div>
+
+            <div class="exercise-card">
+                <div class="exercise-title">3. Abdução de Quadril na Polia (Cabo)</div>
+                <div class="exercise-badges">
+                    <span class="badge">3 Séries</span>
+                    <span class="badge">12 a 15 Reps / lado</span>
+                </div>
+                <div class="exercise-media">
+                    <img src="https://v2.exerciseregister.com/assets/animations/0138.gif" alt="Abdução Polia">
+                </div>
+                <div class="exercise-instructions">
+                    Chute lateral controlado mantendo o tronco estável.
+                </div>
+            </div>
+
+            <div class="exercise-card">
+                <div class="exercise-title">4. Mesa ou Cadeira Flexora</div>
+                <div class="exercise-badges">
+                    <span class="badge">4 Séries</span>
+                    <span class="badge">12 Reps</span>
+                </div>
+                <div class="exercise-media">
+                    <img src="https://v2.exerciseregister.com/assets/animations/0583.gif" alt="Mesa Flexora">
+                </div>
+                <div class="exercise-instructions">
+                    Descida bem lenta e controlada (3 segundos).
+                </div>
+            </div>
+
+            <div class="exercise-card">
+                <div class="exercise-title">5. Panturrilha Sentado (Burrinho)</div>
+                <div class="exercise-badges">
+                    <span class="badge">4 Séries</span>
+                    <span class="badge">20 Reps</span>
+                </div>
+                <div class="exercise-media">
+                    <img src="https://v2.exerciseregister.com/assets/animations/0587.gif" alt="Panturrilha">
+                </div>
+                <div class="exercise-instructions">
+                    Amplitude máxima de movimento subindo e descendo bem os calcanhares.
+                </div>
+            </div>
+        </div>
+
+        <div id="treino-d" class="workout-section">
+            <div class="workout-header">
+                <h2>TREINO D: Membros Superiores</h2>
+                <p>Estética e postura sem peso nos ombros</p>
+            </div>
+
+            <div class="exercise-card">
+                <div class="exercise-title">1. Supino Reto com Halteres</div>
+                <div class="exercise-badges">
+                    <span class="badge">4 Séries</span>
+                    <span class="badge">12 Reps</span>
+                </div>
+                <div class="exercise-media">
+                    <img src="https://v2.exerciseregister.com/assets/animations/0289.gif" alt="Supino Halteres">
+                </div>
+                <div class="exercise-instructions">
+                    Execução controlada garantindo simetria dos dois lados.
+                </div>
+            </div>
+
+            <div class="exercise-card">
+                <div class="exercise-title">2. Crucifixo Inclinado com Halteres</div>
+                <div class="exercise-badges">
+                    <span class="badge">3 Séries</span>
+                    <span class="badge">12 Reps</span>
+                </div>
+                <div class="exercise-media">
+                    <img src="https://v2.exerciseregister.com/assets/animations/0313.gif" alt="Crucifixo Inclinado">
+                </div>
+                <div class="exercise-instructions">
+                    Abrir bem o peitoral mantendo cotovelos levemente flexionados.
+                </div>
+            </div>
+
+            <div class="exercise-card">
+                <div class="exercise-title">3. Elevação Lateral (Sentada)</div>
+                <div class="exercise-badges">
+                    <span class="badge">4 Séries</span>
+                    <span class="badge">15 / 12 / 10 / 8 Reps</span>
+                </div>
+                <div class="exercise-media">
+                    <img src="https://v2.exerciseregister.com/assets/animations/0334.gif" alt="Elevação Lateral">
+                </div>
+                <div class="exercise-instructions">
+                    Obrigatório fazer sentada para não balançar o tronco nem forçar a lombar.
+                </div>
+            </div>
+
+            <div class="exercise-card">
+                <div class="exercise-title">4. Elevação Frontal na Polia com Corda</div>
+                <div class="exercise-badges">
+                    <span class="badge">3 Séries</span>
+                    <span class="badge">12 Reps</span>
+                </div>
+                <div class="exercise-media">
+                    <img src="https://v2.exerciseregister.com/assets/animations/0212.gif" alt="Elevação Frontal">
+                </div>
+                <div class="exercise-instructions">
+                    Elevar a corda até a altura dos olhos com controle.
+                </div>
+            </div>
+
+            <div class="exercise-card">
+                <div class="exercise-title">5. Tríceps Corda na Polia</div>
+                <div class="exercise-badges">
+                    <span class="badge">4 Séries</span>
+                    <span class="badge">12 Reps + Drop-set</span>
+                </div>
+                <div class="exercise-media">
+                    <img src="https://v2.exerciseregister.com/assets/animations/0201.gif" alt="Triceps Corda">
+                </div>
+                <div class="exercise-instructions">
+                    Abrir a corda embaixo na máxima contração. Drop-set na última série.
+                </div>
+            </div>
+        </div>
+
+        <div id="treino-e" class="workout-section">
+            <div class="workout-header">
+                <h2>TREINO E: Glúteo Total & Cadeia Posterior</h2>
+                <p>Estímulo final e queimador metabólico</p>
+            </div>
+
+            <div class="exercise-card">
+                <div class="exercise-title">1. Glúteo na Polia ("Coice")</div>
+                <div class="exercise-badges">
+                    <span class="badge">4 Séries</span>
+                    <span class="badge">12 a 15 Reps / lado</span>
+                </div>
+                <div class="exercise-media">
+                    <img src="https://v2.exerciseregister.com/assets/animations/0177.gif" alt="Gluteo Polia">
+                </div>
+                <div class="exercise-instructions">
+                    Tronco levemente inclinado. Chutar para trás e levemente para fora focando a força no bumbum.
+                </div>
+            </div>
+
+            <div class="exercise-card">
+                <div class="exercise-title">2. Cadeira Abdutora (Tronco Encostado)</div>
+                <div class="exercise-badges">
+                    <span class="badge">3 Séries</span>
+                    <span class="badge">15 Reps + Rest-Pause</span>
+                </div>
+                <div class="exercise-media">
+                    <img src="https://v2.exerciseregister.com/assets/animations/0586.gif" alt="Abdutora Padrão">
+                </div>
+                <div class="exercise-instructions">
+                    Postura padrão encostada no banco. Na última série, descanse 15s após falhar e faça mais o máximo.
+                </div>
+            </div>
+
+            <div class="exercise-card">
+                <div class="exercise-title">3. Stiff Leve com Halteres (ou Mesa Flexora)</div>
+                <div class="exercise-badges">
+                    <span class="badge">3 Séries</span>
+                    <span class="badge">12 Reps</span>
+                </div>
+                <div class="exercise-media">
+                    <img src="https://v2.exerciseregister.com/assets/animations/0355.gif" alt="Stiff">
+                </div>
+                <div class="exercise-instructions">
+                    Mantenha os joelhos levemente destravados e desça projetando o quadril para trás.
+                </div>
+                <div class="note">⚠️ Se sentir incômodo na lombar, ir direto para a Mesa Flexora.</div>
+            </div>
+
+            <div class="exercise-card">
+                <div class="exercise-title">4. Cadeira Adutora</div>
+                <div class="exercise-badges">
+                    <span class="badge">4 Séries</span>
+                    <span class="badge">15 Reps</span>
+                </div>
+                <div class="exercise-media">
+                    <img src="https://v2.exerciseregister.com/assets/animations/0588.gif" alt="Cadeira Adutora">
+                </div>
+                <div class="exercise-instructions">
+                    Aproximar as pernas com força no interno da coxa.
+                </div>
+            </div>
+
+            <div class="exercise-card">
+                <div class="exercise-title">🔥 Cardio: Esteira Inclinada</div>
+                <div class="exercise-badges">
+                    <span class="badge">15 a 20 min</span>
+                    <span class="badge">Inclinação 6% a 10%</span>
+                </div>
+                <div class="exercise-instructions">
+                    Caminhada acelerada (sem correr) e sem segurar nas barras laterais. Excelente para ativar o glúteo e queimar calorias sem impactar a coluna.
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function openTab(tabId) {
+            // Esconde todos os treinos
+            const sections = document.querySelectorAll('.workout-section');
+            sections.forEach(section => section.classList.remove('active'));
+
+            // Remove o estado ativo de todos os botões
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(button => button.classList.remove('active'));
+
+            // Mostra o treino selecionado e ativa o botão correspondente
+            document.getElementById(tabId).classList.add('active');
+            event.currentTarget.classList.add('active');
+
+            // Rola suavemente para o topo do treino
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
