@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+           <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -47,7 +47,6 @@
             margin-top: 4px;
         }
 
-        /* Navegação dos Treinos */
         .nav-container {
             display: flex;
             overflow-x: auto;
@@ -79,7 +78,6 @@
             background: linear-gradient(135deg, rgba(236, 72, 153, 0.2), rgba(139, 92, 246, 0.2));
         }
 
-        /* Container de Conteúdo */
         .content {
             padding: 0 16px;
         }
@@ -107,7 +105,6 @@
             margin-top: 2px;
         }
 
-        /* Card do Exercício */
         .exercise-card {
             background-color: var(--card-bg);
             border-radius: 16px;
@@ -143,16 +140,18 @@
             height: 220px;
             border-radius: 12px;
             overflow: hidden;
-            background-color: #000;
+            background-color: #0f172a;
             margin-bottom: 12px;
-            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(255,255,255,0.05);
         }
 
-        .exercise-media iframe {
+        .exercise-media img {
             width: 100%;
             height: 100%;
-            border: none;
-            pointer-events: none; /* Impede clique para não pausar o GIF */
+            object-fit: cover;
         }
 
         .exercise-instructions {
@@ -190,6 +189,7 @@
 
     <div class="content">
 
+        <!-- TREINO A -->
         <div id="treino-a" class="workout-section active">
             <div class="workout-header">
                 <h2>TREINO A: Glúteo Máximo & Quadríceps</h2>
@@ -203,7 +203,7 @@
                     <span class="badge">12 Reps / lado</span>
                 </div>
                 <div class="exercise-media">
-                    <iframe src="https://giphy.com/embed/3o7TKR15L511fVq0BG"></iframe>
+                    <img src="a1.gif" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1574680096145-d05b474e2155?w=500&q=80';" alt="Elevação Pélvica Unilateral">
                 </div>
                 <div class="exercise-instructions">
                     Ativação inicial no solo sem carga. Focar em contrair bem o glúteo no topo para despertar a musculatura.
@@ -217,7 +217,7 @@
                     <span class="badge">12 / 10 / 8 / 8 Reps</span>
                 </div>
                 <div class="exercise-media">
-                    <iframe src="https://giphy.com/embed/l0HlCqV35yPPfIee4"></iframe>
+                    <img src="a2.gif" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1517838277536-f5f99be501cd?w=500&q=80';" alt="Elevação Pélvica">
                 </div>
                 <div class="exercise-instructions">
                     Aumente a carga a cada série (pirâmide). Segure 3 segundos no topo em todas as repetições esmagando o bumbum.
@@ -231,7 +231,7 @@
                     <span class="badge">12 a 15 Reps</span>
                 </div>
                 <div class="exercise-media">
-                    <iframe src="https://giphy.com/embed/3o6Zt6ML6BklcajjsA"></iframe>
+                    <img src="a3.gif" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=500&q=80';" alt="Agachamento Sumo">
                 </div>
                 <div class="exercise-instructions">
                     Pés bem abertos (45°). Segure o halter com os braços esticados para baixo. Peso abaixo do centro de gravidade.
@@ -245,7 +245,7 @@
                     <span class="badge">12 Reps Lentas</span>
                 </div>
                 <div class="exercise-media">
-                    <iframe src="https://giphy.com/embed/3o7TKT0yZl35iJqg2A"></iframe>
+                    <img src="a4.gif" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=500&q=80';" alt="Leg Press 45">
                 </div>
                 <div class="exercise-instructions">
                     Pés posicionados bem no topo da plataforma e levemente afastados.
@@ -260,7 +260,7 @@
                     <span class="badge">12 Reps + Drop-set</span>
                 </div>
                 <div class="exercise-media">
-                    <iframe src="https://giphy.com/embed/xT1R9YbV274L77kMms"></iframe>
+                    <img src="a5.gif" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1540497077202-7c8a3999166f?w=500&q=80';" alt="Cadeira Extensora">
                 </div>
                 <div class="exercise-instructions">
                     Na última série, faça o Drop-set: reduza o peso em 40% e vá direto até a falha.
@@ -268,6 +268,7 @@
             </div>
         </div>
 
+        <!-- TREINO B -->
         <div id="treino-b" class="workout-section">
             <div class="workout-header">
                 <h2>TREINO B: Costas, Bíceps & Core</h2>
@@ -281,7 +282,7 @@
                     <span class="badge">12 / 10 / 8 / 8 Reps</span>
                 </div>
                 <div class="exercise-media">
-                    <iframe src="https://giphy.com/embed/3o7TKR5z9uC7x2bMpq"></iframe>
+                    <img src="b1.gif" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=500&q=80';" alt="Puxada Alta">
                 </div>
                 <div class="exercise-instructions">
                     Pegada aberta. Puxar até a altura do peito, fechando bem as escápulas atrás.
@@ -295,7 +296,7 @@
                     <span class="badge">12 Reps / lado</span>
                 </div>
                 <div class="exercise-media">
-                    <iframe src="https://giphy.com/embed/3o6ZT2vInIuXU3c5O0"></iframe>
+                    <img src="b2.gif" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=500&q=80';" alt="Remada Articulada">
                 </div>
                 <div class="exercise-instructions">
                     Apoie o peito no banco da máquina. Excelente para alinhar assimetrias da escoliose com apoio total.
@@ -309,7 +310,7 @@
                     <span class="badge">12 Reps</span>
                 </div>
                 <div class="exercise-media">
-                    <iframe src="https://giphy.com/embed/3o7TKqm21A8gIqgXm0"></iframe>
+                    <img src="b3.gif" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=500&q=80';" alt="Remada Baixa">
                 </div>
                 <div class="exercise-instructions">
                     Coluna ereta, puxando o triângulo em direção ao umbigo.
@@ -323,7 +324,7 @@
                     <span class="badge">12 Reps</span>
                 </div>
                 <div class="exercise-media">
-                    <iframe src="https://giphy.com/embed/xT1R9S04pQY3SgU0g0"></iframe>
+                    <img src="b4.gif" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=500&q=80';" alt="Rosca Polia">
                 </div>
                 <div class="exercise-instructions">
                     Cotovelos travados ao lado do corpo.
@@ -337,7 +338,7 @@
                     <span class="badge">15 a 20 Reps</span>
                 </div>
                 <div class="exercise-media">
-                    <iframe src="https://giphy.com/embed/3o6Zt8AByU6W2kY8q4"></iframe>
+                    <img src="b5.gif" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=500&q=80';" alt="Abdominal Infra">
                 </div>
                 <div class="exercise-instructions">
                     Concentrar na força do abdômen mantendo a lombar colada no chão.
@@ -351,7 +352,7 @@
                     <span class="badge">30 a 45 seg</span>
                 </div>
                 <div class="exercise-media">
-                    <iframe src="https://giphy.com/embed/3o7TKp0X7hD3N8C7sI"></iframe>
+                    <img src="b6.gif" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=500&q=80';" alt="Prancha">
                 </div>
                 <div class="exercise-instructions">
                     Manter glúteos e abdômen bem contraídos durante a sustentação.
@@ -359,6 +360,7 @@
             </div>
         </div>
 
+        <!-- TREINO C -->
         <div id="treino-c" class="workout-section">
             <div class="workout-header">
                 <h2>TREINO C: Glúteo Médio, Mínimo & Abdução</h2>
@@ -372,7 +374,7 @@
                     <span class="badge">15 a 20 Reps</span>
                 </div>
                 <div class="exercise-media">
-                    <iframe src="https://giphy.com/embed/l0HlS7A6T0JzKk1S8"></iframe>
+                    <img src="c1.gif" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1517838277536-f5f99be501cd?w=500&q=80';" alt="Cadeira Abdutora">
                 </div>
                 <div class="exercise-instructions">
                     Descole as costas do encosto e incline o tronco para a frente. Foco total nas fibras do glúteo superior.
@@ -386,7 +388,7 @@
                     <span class="badge">10 a 12 Reps / lado</span>
                 </div>
                 <div class="exercise-media">
-                    <iframe src="https://giphy.com/embed/3o7TKR15L511fVq0BG"></iframe>
+                    <img src="c2.gif" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=500&q=80';" alt="Afundo Step">
                 </div>
                 <div class="exercise-instructions">
                     Pé da frente no step. Halteres leves nas mãos. Empurrar o chão pelo calcanhar da frente para subir.
@@ -400,7 +402,7 @@
                     <span class="badge">12 a 15 Reps / lado</span>
                 </div>
                 <div class="exercise-media">
-                    <iframe src="https://giphy.com/embed/3o6Zt6ML6BklcajjsA"></iframe>
+                    <img src="c3.gif" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1517838277536-f5f99be501cd?w=500&q=80';" alt="Abdução Polia">
                 </div>
                 <div class="exercise-instructions">
                     Chute lateral controlado mantendo o tronco estável.
@@ -414,7 +416,7 @@
                     <span class="badge">12 Reps</span>
                 </div>
                 <div class="exercise-media">
-                    <iframe src="https://giphy.com/embed/xT1R9YbV274L77kMms"></iframe>
+                    <img src="c4.gif" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1540497077202-7c8a3999166f?w=500&q=80';" alt="Mesa Flexora">
                 </div>
                 <div class="exercise-instructions">
                     Descida bem lenta e controlada (3 segundos).
@@ -428,7 +430,7 @@
                     <span class="badge">20 Reps</span>
                 </div>
                 <div class="exercise-media">
-                    <iframe src="https://giphy.com/embed/3o7TKT0yZl35iJqg2A"></iframe>
+                    <img src="c5.gif" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=500&q=80';" alt="Panturrilha">
                 </div>
                 <div class="exercise-instructions">
                     Amplitude máxima de movimento subindo e descendo bem os calcanhares.
@@ -436,6 +438,7 @@
             </div>
         </div>
 
+        <!-- TREINO D -->
         <div id="treino-d" class="workout-section">
             <div class="workout-header">
                 <h2>TREINO D: Membros Superiores</h2>
@@ -449,7 +452,7 @@
                     <span class="badge">12 Reps</span>
                 </div>
                 <div class="exercise-media">
-                    <iframe src="https://giphy.com/embed/xT1R9Y3M21cM82uYw0"></iframe>
+                    <img src="d1.gif" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=500&q=80';" alt="Supino Halteres">
                 </div>
                 <div class="exercise-instructions">
                     Execução controlada garantindo simetria dos dois lados.
@@ -463,7 +466,7 @@
                     <span class="badge">12 Reps</span>
                 </div>
                 <div class="exercise-media">
-                    <iframe src="https://giphy.com/embed/3o7TKq1WlO1e4XwDle"></iframe>
+                    <img src="d2.gif" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=500&q=80';" alt="Crucifixo Inclinado">
                 </div>
                 <div class="exercise-instructions">
                     Abrir bem o peitoral mantendo cotovelos levemente flexionados.
@@ -477,7 +480,7 @@
                     <span class="badge">15 / 12 / 10 / 8 Reps</span>
                 </div>
                 <div class="exercise-media">
-                    <iframe src="https://giphy.com/embed/3o6Zt481isNVuQI1l6"></iframe>
+                    <img src="d3.gif" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=500&q=80';" alt="Elevação Lateral">
                 </div>
                 <div class="exercise-instructions">
                     Obrigatório fazer sentada para não balançar o tronco nem forçar a lombar.
@@ -491,7 +494,7 @@
                     <span class="badge">12 Reps</span>
                 </div>
                 <div class="exercise-media">
-                    <iframe src="https://giphy.com/embed/xT1R9Y14A7iZq80Kze"></iframe>
+                    <img src="d4.gif" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=500&q=80';" alt="Elevação Frontal">
                 </div>
                 <div class="exercise-instructions">
                     Elevar a corda até a altura dos olhos com controle.
@@ -505,7 +508,7 @@
                     <span class="badge">12 Reps + Drop-set</span>
                 </div>
                 <div class="exercise-media">
-                    <iframe src="https://giphy.com/embed/3o7TKp0X7hD3N8C7sI"></iframe>
+                    <img src="d5.gif" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=500&q=80';" alt="Triceps Corda">
                 </div>
                 <div class="exercise-instructions">
                     Abrir a corda embaixo na máxima contração. Drop-set na última série.
@@ -513,6 +516,7 @@
             </div>
         </div>
 
+        <!-- TREINO E -->
         <div id="treino-e" class="workout-section">
             <div class="workout-header">
                 <h2>TREINO E: Glúteo Total & Cadeia Posterior</h2>
@@ -526,7 +530,7 @@
                     <span class="badge">12 a 15 Reps / lado</span>
                 </div>
                 <div class="exercise-media">
-                    <iframe src="https://giphy.com/embed/l0HlCqV35yPPfIee4"></iframe>
+                    <img src="e1.gif" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1517838277536-f5f99be501cd?w=500&q=80';" alt="Gluteo Polia">
                 </div>
                 <div class="exercise-instructions">
                     Tronco levemente inclinado. Chutar para trás e levemente para fora focando a força no bumbum.
@@ -540,7 +544,7 @@
                     <span class="badge">15 Reps + Rest-Pause</span>
                 </div>
                 <div class="exercise-media">
-                    <iframe src="https://giphy.com/embed/l0HlS7A6T0JzKk1S8"></iframe>
+                    <img src="e2.gif" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1517838277536-f5f99be501cd?w=500&q=80';" alt="Abdutora Padrão">
                 </div>
                 <div class="exercise-instructions">
                     Postura padrão encostada no banco. Na última série, descanse 15s após falhar e faça mais o máximo.
@@ -554,7 +558,7 @@
                     <span class="badge">12 Reps</span>
                 </div>
                 <div class="exercise-media">
-                    <iframe src="https://giphy.com/embed/3o6Zt6ML6BklcajjsA"></iframe>
+                    <img src="e3.gif" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=500&q=80';" alt="Stiff">
                 </div>
                 <div class="exercise-instructions">
                     Mantenha os joelhos levemente destravados e desça projetando o quadril para trás.
@@ -569,7 +573,7 @@
                     <span class="badge">15 Reps</span>
                 </div>
                 <div class="exercise-media">
-                    <iframe src="https://giphy.com/embed/l0HlS7A6T0JzKk1S8"></iframe>
+                    <img src="e4.gif" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1517838277536-f5f99be501cd?w=500&q=80';" alt="Cadeira Adutora">
                 </div>
                 <div class="exercise-instructions">
                     Aproximar as pernas com força no interno da coxa.
@@ -583,7 +587,7 @@
                     <span class="badge">Inclinação 6% a 10%</span>
                 </div>
                 <div class="exercise-media">
-                    <iframe src="https://giphy.com/embed/3o7TKT0yZl35iJqg2A"></iframe>
+                    <img src="e5.gif" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1538805060514-97d9cc17730c?w=500&q=80';" alt="Esteira Inclinada">
                 </div>
                 <div class="exercise-instructions">
                     Caminhada acelerada (sem correr) e sem segurar nas barras laterais. Excelente para ativar o glúteo e queimar calorias sem impactar a coluna.
